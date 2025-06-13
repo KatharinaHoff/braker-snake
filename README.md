@@ -128,6 +128,12 @@ If a fastqdump was interrupted during gzip (because sth else killed the pipeline
 
 (can always be generated with `snakemake -s Snakefile_dataprep --dag | dot -Tpng > dag1.png`, potentially not on BRAIN because dot may not be installed)
 
+![DAG](dag1.png)
+
+(can always be generated with `snakemake -s Snakefile_annotate --dag | dot -Tpng > dag2.png`, potentially not on BRAIN because dot may not be installed)
+
+![DAG](dag2.png)
+
 ## Publications
 
 N. Nenasheva, C. Pitzschel, C. N. Webster, A. J. Hart, J. L. Wegrzyn, M. M. Bengtsson, K. J. Hoff
@@ -137,9 +143,3 @@ Scientific Data 12:985, https://doi.org/10.1038/s41597-025-05306-z
 ## Funding
 
 This software was funded by the German Research Foundation grant 277249973 to KJH.
-
-![DAG](dag1.png)
-
-(can always be generated with `snakemake -s Snakefile_annotate --dag | dot -Tpng > dag2.png`, potentially not on BRAIN because dot may not be installed)
-
-![DAG](dag2.png)

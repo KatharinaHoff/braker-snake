@@ -2,6 +2,10 @@
 
 Simple snakemake workflows for handling BRAKER on large data sets to prepare training data for Tiberius.
 
+Contributors: Clara Pitzschel, Natalia Nenasheva, Stepan Saenko, Katharina J. Hoff
+
+Contact: katharina.hoff@uni-greifswald.de
+
 **Warning:** This is a not a released software package, it comes without support. We use this workflow internally for bulk genome annotation and it was customized to our needs.
 
 Data preparation workflow:
@@ -123,6 +127,16 @@ If a fastqdump was interrupted during gzip (because sth else killed the pipeline
 ## Current DAGs with example data
 
 (can always be generated with `snakemake -s Snakefile_dataprep --dag | dot -Tpng > dag1.png`, potentially not on BRAIN because dot may not be installed)
+
+## Publications
+
+N. Nenasheva, C. Pitzschel, C. N. Webster, A. J. Hart, J. L. Wegrzyn, M. M. Bengtsson, K. J. Hoff
+annotation of protein-coding genesin 49 diatom genomes from the Bacillariophyta clade
+Scientific Data 12:985, https://doi.org/10.1038/s41597-025-05306-z
+
+## Funding
+
+This software was funded by the German Research Foundation grant 277249973 to KJH.
 
 ![DAG](dag1.png)
 

@@ -136,8 +136,8 @@ If a fastqdump was interrupted during gzip (because sth else killed the pipeline
 
 ## Publications
 
-N. Nenasheva, C. Pitzschel, C. N. Webster, A. J. Hart, J. L. Wegrzyn, M. M. Bengtsson, K. J. Hoff
-annotation of protein-coding genesin 49 diatom genomes from the Bacillariophyta clade
+N. Nenasheva, C. Pitzschel, C. N. Webster, A. J. Hart, J. L. Wegrzyn, M. M. Bengtsson, K. J. Hoff (2025)
+Annotation of protein-coding genes in 49 diatom genomes from the Bacillariophyta clade.
 Scientific Data 12:985, https://doi.org/10.1038/s41597-025-05306-z
 
 ## Funding

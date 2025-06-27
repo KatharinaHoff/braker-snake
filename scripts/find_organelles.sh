@@ -4,18 +4,21 @@
 process_genome_file() {
     local file=$1
 
-    # Extract headers and truncate them
+    # Search for organelle keywords in the headers
+    organelle_hits=$(grep -iE "chloroplast|plastid|mitochondrion" "$file" | cut -d' ' -f1 | sort | uniq)
+    
+    if [ ! -z "$organelle_hits" ]; then
+        echo "$organelle_hits"
+        return
+    fi
+
+    # Fall back to length-based heuristic
     headers=$(grep "^>" "$file" | cut -d' ' -f1)
-
-    # Get lengths of headers and sort them
     header_lengths=$(echo "$headers" | awk '{ print length($0) " " $0 }' | sort -n)
+    shortest_length=$(echo "$header_lengths" | awk '{print $1}' | uniq -c | awk '$1 == 2 && NR == 1 { print $2 }')
 
-    # Check if there are exactly two shortest headers
-    shortest_headers=$(echo "$header_lengths" | awk '{print $1}' | uniq -c | awk '$1 == 2 && NR == 1 { print $2 }')
-
-    if [ ! -z "$shortest_headers" ]; then
-        # Get the two headers with the shortest length
-        two_shortest=$(echo "$header_lengths" | awk -v len="$shortest_headers" '$1 == len { print $2 }')
+    if [ ! -z "$shortest_length" ]; then
+        two_shortest=$(echo "$header_lengths" | awk -v len="$shortest_length" '$1 == len { print $2 }')
         echo "$two_shortest"
     else
         echo ">MT"
